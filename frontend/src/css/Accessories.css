@@ -1,0 +1,19 @@
+.AlertSensor{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 32%;
+    padding: 10px;
+    border-radius: 10px;
+    background: #B90000;
+    .data{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex: 1 0 0;
+        color: #FFF;
+        p, h4{
+            color: var(--color-white);
+        }
+    }
+}

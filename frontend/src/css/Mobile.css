@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+    /* 隱藏 WebKit 滾動條（Chrome、Safari） */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    #root{
+        flex-direction: column;
+    }
+}
