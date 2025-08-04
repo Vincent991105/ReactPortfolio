@@ -1,0 +1,111 @@
+.Background{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(97.78% 65.6% at 29.17% 42.06%, rgba(255, 0, 0, 0.20) 26.44%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, rgba(255, 234, 0, 0.50) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(291deg, #3D7F63 0%, #FFF 100%);
+    z-index: 1;
+}
+
+.Main-Project{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 1000px;
+    height: 100%;
+    gap: 20px;
+    padding: 30px 10px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.Home{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    height: 100%;
+    gap: 50px;
+    font-weight: bold;
+    color: #1e1756;
+    overflow-y: auto;
+    .Header{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h1{
+            span{
+                background: linear-gradient(90deg, #F00 0%, #9014AF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .SideTitle{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .Context{
+        display: flex;
+        gap: 30px;
+    }
+}
+
+.Projects{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    height: 100%;
+    gap: 10px;
+    font-weight: bold;
+    .SearchBar{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        .FilterBar{
+            display: flex;
+            width: 100%;
+            gap:10px;
+        }
+        input{
+            font-size: 1.3em;
+            padding: 10px;
+            background: unset;
+            border: unset;
+            border-bottom: 3px solid #1e1756;
+        }
+        select{
+            font-size: 1.3em;
+            padding: 10px;
+            background: #ffffff3a;
+            border: unset;
+            flex: 1 0 0;
+            border-radius: 5px;
+            /* 隱藏預設箭頭 */
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            /* 可選：移除 IE 的箭頭（不一定需要） */
+            background-image: none;
+        }
+        select:focus-visible{
+            outline: unset;
+        }
+    }
+    .List{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+        overflow-y: auto;
+    }
+    .List::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.Home::-webkit-scrollbar{
+    display: none;
+}

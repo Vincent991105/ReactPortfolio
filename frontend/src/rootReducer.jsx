@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
+import ProjectBridgeDataSlice from "./website/store/bridgeSlice";
 
 const appReducer = combineReducers({
+  ProjectBridgeData: ProjectBridgeDataSlice,
 });
 
 const rootReducer = (state, action) => {

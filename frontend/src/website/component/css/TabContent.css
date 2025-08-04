@@ -1,0 +1,25 @@
+.TabContent{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--color-component-bg);
+    box-shadow: var(--color-shadow);
+    overflow: hidden;
+    .Tablist {
+        display: flex;
+        height: fit-content;
+        width: 100%;
+        border-bottom: 1px solid var(--color-tab-font);
+        cursor: pointer;
+        .Tab {
+        display: flex;
+        padding: 10px 0;
+        flex: 1 0 0;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-tab-font);
+        }
+    }
+}

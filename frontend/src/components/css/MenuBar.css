@@ -1,0 +1,23 @@
+.MenuBar{
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 100%;
+    gap: 30px;
+    align-items: center;
+    .active{
+        animation: floatAnimation 4s ease-in-out infinite;
+    }
+}
+
+/* 定義動畫關鍵影格 */
+@keyframes floatAnimation {
+    /* 動畫開始時和結束時，回到原位 */
+    0%, 100% {
+        transform: translateY(0);
+    }
+    /* 動畫進行到一半時，向上移動 20px */
+    50% {
+        transform: translateY(-5px);
+    }
+}

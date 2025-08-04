@@ -1,0 +1,12 @@
+
+.BridgeMap {
+  display: flex;
+  height: 100%;
+  max-width: 40%;
+  flex-grow: 1;
+  position: relative;
+  .Map {
+    height: 100%;
+    width: 100%;
+  }
+}
