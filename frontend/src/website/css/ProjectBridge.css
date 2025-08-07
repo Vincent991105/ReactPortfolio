@@ -1,0 +1,392 @@
+.ProjectBridge{
+  display: block;
+  width: 100%;
+  height: 100%;
+  .content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+p {
+  color: var(--color-font);
+}
+
+.css-1gi03po-MuiGauge-container text,
+.css-1xszln-MuiGauge-container text {
+  fill: var(--color-Header) !important;
+}
+
+/* 设置滚动条的宽度 */
+::-webkit-scrollbar {
+  width: 10px; /* 水平滚动条宽度 */
+}
+
+/* 设置滚动条轨道的颜色 */
+::-webkit-scrollbar-track {
+  background: #00000000;
+}
+
+/* 设置滚动条滑块的颜色 */
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 6px;
+}
+
+/* 设置滑块悬浮时的颜色 */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+.leaflet-bottom,
+.leaflet-top {
+  display: none;
+}
+
+body {
+  background-color: var(--color-Template-bg);
+}
+
+
+.iconButton {
+  color: var(--color-icon-button);
+  font-size: 1.313em;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  color: var(--color-icon-hover);
+}
+
+button,
+.earthBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  gap: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.1;
+  border-radius: 5px;
+  background: var(--color-Button-bg);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button:hover {
+  border-color: unset;
+  background: var(--color-Button-hover);
+}
+
+button:disabled {
+  opacity: 0.5; /* 讓按鈕禁用時看起來較淡 */
+  cursor: not-allowed; /* 游標顯示為禁止符號 */
+  pointer-events: none; /* 禁止鼠標事件（無法點擊） */
+}
+
+input,
+Select,
+textarea {
+  flex: 1;
+  border-radius: 5px;
+  font-size: 1.125em;
+  padding: 0 10px;
+  min-height: 40px;
+  width: 100%;
+  border-width: 1px;
+  background-color: var(--color-input);
+  border-color: var(--color-input-br);
+  color: var(--color-font);
+}
+
+input::placeholder {
+  font-size: 0.9em;
+  color: var(--color-input-placeholder);
+}
+
+input:disabled,
+select:disabled {
+  color: var(--color-disabled-font);
+  background: var(--color-disabled);
+  font-weight: bold;
+  opacity: unset;
+}
+
+.InputRow {
+  display: flex;
+  height: fit-content;
+  width: 100%;
+  gap: 10px;
+}
+
+.ImageBox {
+  display: flex;
+  height: 100%;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 10px;
+  background: var(--color-component-bg);
+  position: relative;
+  color: var(--color-Header);
+  img {
+    height: 200px;
+    width: 100%;
+    align-self: unset;
+  }
+  h4 {
+    color: var(--color-Header);
+  }
+}
+
+.point {
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+}
+
+.Title {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 5px;
+  color: var(--color-Header);
+  h2 {
+    color: var(--color-Header);
+    font-weight: bold;
+    line-height: normal;
+  }
+  button {
+    color: var(--color-Button-font);
+  }
+}
+
+.Logo {
+  z-index: 1001;
+  display: flex;
+  padding: 3.689px 7.379px;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.689px;
+  position: absolute;
+  left: 25px;
+  top: 22px;
+  border-radius: 7.379px;
+  opacity: 0.7;
+  background: var(--color-white);
+  box-shadow: var(--color-shadow);
+  img {
+    width: 63.243px;
+    height: 68.621px;
+  }
+}
+
+.Logo:hover {
+  opacity: 1;
+}
+
+.Preview {
+  display: flex;
+  height: 100%;
+  max-width: 40%;
+  flex-grow: 1;
+  position: relative;
+  .Map {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.ImgBox {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  img {
+    width: inherit;
+  }
+}
+
+.UnknownData {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-component-bg);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.SubTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  h3 {
+    font-weight: bold;
+  }
+  .Main {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.animated-marker {
+  width: 30px;
+  height: 30px;
+  background-color: #ff5722; /* 圓形顏色 */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.searchBar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  input {
+    border: 1px solid var(--color-Button-bg);
+    background: var(--color-input);
+  }
+}
+
+.TabSet {
+  display: flex;
+  height: fit-content;
+  max-width: 30%;
+  flex: 1 0 0;
+  border: 1px solid var(--color-tab-font);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  h4 {
+    text-align: center;
+    padding: 5px;
+    flex: 1 0 0;
+    height: 100%;
+  }
+}
+
+/* 啟動時的特殊Button */
+.specialActive {
+  background-color: var(--color-Button-bg);
+  color: #fff !important;
+}
+
+.specialInactive {
+  background-color: var(--color-component-bg);
+  color: var(--color-Button-hover);
+}
+
+.CatogaryBar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .CatogaryList {
+    display: flex;
+    gap: 5px;
+    .Catogary {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      font-size: 21px;
+      font-weight: bold;
+      border-radius: 10px;
+      color: #202a69;
+      background-color: var(--color-white);
+      box-shadow: var(--color-shadow);
+    }
+    .active {
+      background-color: var(--color-Button-bg);
+      color: var(--color-font-white);
+    }
+  }
+
+  .PositionDetail {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-component-bg);
+    box-shadow: var(--color-shadow);
+    border-radius: 10px;
+    span {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.InputBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+  padding: 10px;
+  background-color: var(--color-component-bg);
+  box-shadow: var(--color-shadow);
+  border-radius: 10px;
+  .title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .ImageBox {
+    border: 1px solid #202a69;
+    gap: 10px;
+    .CropButton {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  button {
+    color: var(--color-Button-font);
+  }
+  h4 {
+    span {
+      font-size: 0.8em;
+      color: var(--color-font-white);
+      padding: 5px 10px;
+      border-radius: 5px;
+      background: #ff5858;
+    }
+  }
+  textarea {
+    height: 100% !important;
+    width: 100% !important;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .InputCheck {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: #ff5858;
+    input {
+      width: auto;
+      flex: none;
+      min-height: unset;
+    }
+  }
+}
+

@@ -1,0 +1,77 @@
+.DisasterComponents {
+  display: flex;
+  width: 100%;
+  box-shadow: var(--color-shadow);
+  border-radius: 5px;
+  overflow: hidden;
+  .Info {
+    display: flex;
+    padding: 10px 10px;
+    gap: 10px;
+    align-items: center;
+    background: var(--color-component-bg);
+    flex-grow: 1;
+    font-weight: 700;
+    h3,
+    h4 {
+      color: var(--color-Header);
+      font-weight: bold;
+      line-height: normal;
+    }
+    .data {
+      display: flex;
+      gap: 3px;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .result {
+    display: flex;
+    width: 25%;
+    padding: 5px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #9dcd7b;
+    font-weight: bold;
+    color: var(--color-font-black);
+    span,
+    p {
+      color: #252525;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.earthBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  gap: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.1;
+  border-radius: 5px;
+  background: var(--color-Button-bg);
+  height: 30px;
+}
+
+.DisasterRank {
+  height: 85px;
+  width: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: rgb(255, 59, 59);
+  color: var(--color-font-white);
+  h4 {
+    color: var(--color-font-white) !important;
+  }
+  p {
+    color: var(--color-font-white);
+  }
+}

@@ -1,0 +1,49 @@
+.MachineSensor {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 20px;
+    overflow-y: auto;
+    .Sensor {
+        display: flex;
+        width: 32%;
+        padding: 10px;
+        gap: 10px;
+        border-radius: 10px;
+        background: var(--color-component-bg);
+        box-shadow: var(--color-shadow);
+        .InfoBar {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex: 1 0 0;
+            h4 {
+            color: var(--color-Header);
+            }
+            .Data {
+            display: flex;
+            width: 100%;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 700;
+            }
+        }
+        button {
+            color: var(--color-Button-font);
+            font-weight: bold;
+        }
+    }
+    .AddSensor {
+        color: #fff;
+        font-size: 1.1em;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 32%;
+        height: 96px;
+    }
+}
+

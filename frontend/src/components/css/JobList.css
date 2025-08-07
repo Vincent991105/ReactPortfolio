@@ -1,0 +1,43 @@
+.JobList{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .JobItem{
+        display: flex;
+        gap: 20px;
+        padding: 20px 20px;
+        cursor: pointer;
+        h3{
+            text-wrap: nowrap;
+        }
+        .Context{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            h3{
+                font-size: 1.5em;
+            }
+            p{
+                font-size: 1.2em;
+                line-height: 1.5em;
+                opacity: 0.7;
+            }
+        }
+        img{
+            height: auto;
+            min-width: 250px;
+        }
+    }
+    .dimmed {
+        opacity: 0.5;
+        filter: grayscale(10%);
+    }
+    .JobItem:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: #ffffff05;
+        h3{
+            color: brown;
+        }
+    }
+}

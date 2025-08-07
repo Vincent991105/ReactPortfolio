@@ -1,0 +1,76 @@
+.SensorDetail{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1 0 0;
+    gap: 10px;
+    padding: 10px 20px;
+    .TopBar{
+        display: flex;
+        justify-content: space-between;
+    }
+    .MachineTable {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        max-height: 250px;
+        .TableColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1 0 0;
+            gap: 10px;
+            min-width: 20%;
+            .CommonData {
+            display: flex;
+            padding: 10px;
+            flex-direction: column;
+            gap: 3px;
+            border-radius: 10px;
+            background: var(--color-component-bg);
+            box-shadow: var(--color-shadow);
+            color: var(--color-primary);
+            h3,
+            h4 {
+                color: var(--color-Header);
+            }
+            }
+            .SensorCommonData {
+            display: flex;
+            padding: 10px;
+            flex-direction: column;
+            flex: 1 0 0;
+            gap: 3px;
+            border-radius: 10px;
+            background: var(--color-component-bg);
+            box-shadow: var(--color-shadow);
+            h3,h4,p {
+                color: #252525;
+            }
+            }
+            .BridgeHealthy {
+            display: flex;
+            padding: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            border-radius: 10px;
+            background: var(--color-component-bg);
+            box-shadow: var(--color-shadow);
+            h3,
+            h4 {
+                color: var(--color-Header);
+            }
+            }
+            .BridgeSensor {
+            display: flex;
+            }
+        }
+    }
+    .NewsDisaster {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+    }
+}
