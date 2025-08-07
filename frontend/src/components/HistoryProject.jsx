@@ -38,14 +38,14 @@ function HistoryProject() {
     }, []);
 
     const projectData = [
-        {
-            year:2025,
-            name: '台創特殊橋樑管理網站開發',
-            job: '前端工程師',
-            desc: '負責網站前端功能規劃與開發，提供團隊前端規劃協助及資料庫支援。',
-            img:'/ProjectImage/kaohxiong.png',
-            catogary: ['Figma', 'Css', 'React'],
-        },
+        // {
+        //     year:2025,
+        //     name: '台創特殊橋樑管理網站開發',
+        //     job: '前端工程師',
+        //     desc: '負責網站前端功能規劃與開發，提供團隊前端規劃協助及資料庫支援。',
+        //     img:'/ProjectImage/kaohxiong.png',
+        //     catogary: ['Figma', 'Css', 'React'],
+        // },
         {
             year:2024,
             name: '橋樑監控網站開發',
@@ -55,14 +55,14 @@ function HistoryProject() {
             catogary: ['Figma', 'Css', 'React'],
             url:'/ProjectBridge/',
         },
-        {
-            year:2024,
-            name: '福記蛋煮制預測網站',
-            job: '前端工程師',
-            desc: '負責後台功能開發，實作資料登打及預測結果顯示，確保使用者能方便輸入數據並即時查看預測分析。',
-            img:'/ProjectImage/Fuji.png',
-            catogary: ['Html', 'Css', 'Js'],
-        },
+        // {
+        //     year:2024,
+        //     name: '福記蛋煮制預測網站',
+        //     job: '前端工程師',
+        //     desc: '負責後台功能開發，實作資料登打及預測結果顯示，確保使用者能方便輸入數據並即時查看預測分析。',
+        //     img:'/ProjectImage/Fuji.png',
+        //     catogary: ['Html', 'Css', 'Js'],
+        // },
         {
             year:2024,
             name: '桃園好農遊網站開發',
