@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import ProjectBridgeDataSlice from "./website/store/bridgeSlice";
+import ProjectBridgeDataSlice from "./website/store/BridgeSlice";
 
 const appReducer = combineReducers({
   ProjectBridgeData: ProjectBridgeDataSlice,
