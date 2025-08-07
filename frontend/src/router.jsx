@@ -4,20 +4,12 @@ import App from "./App";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ProjectBridge from "./website/ProjectBridge";
-import HomePage from "./website/components/HomePage";
-import SensorDetail from "./website/components/SensorDetail";
+import HomePage from "./website/pages/HomePage";
+import AddBridge from "./website/pages/AddBridge"
+import SensorDetail from "./website/pages/SensorDetail";
 import DataResult from "./website/component/DataResult";
 import HistoryResult from "./website/component/HistoryResult";
 import MachineSensor from "./website/component/MachineSensor";
-import DisasterList from "./website/components/DisasterList";
-import MaintenaceRepair from "./website/components/MaintenanceRepair";
-import RepairTable from "./website/components/RepairTable";
-import AddRepairRequest from "./website/components/AddRepairRequest";
-import CheckRequest from "./website/components/CheckRequest";
-import MaintenanceRecord from "./website/components/MaintenanceRecord";
-import MaintenanceList from "./website/components/MaintenanceList";
-import AddMaintenance from "./website/components/AddMaintenance";
-import CheckMaintenance from "./website/components/CheckMaintenance";
 import BridgeMonitoring from "./website/pages/BridgeMonitoring";
 
 const router = createBrowserRouter([
@@ -85,39 +77,15 @@ const router = createBrowserRouter([
             path: "history-result",
             element: <HistoryResult type={"wholeStructure"} />,
           },
-          {
-            path: "earthquake-result",
-            element: <DisasterList type="earthquake" dataType={"sensor"} />,
-          },
-          {
-            path: "typhoon-result",
-            element: <DisasterList type="typhoon" dataType={"sensor"} />,
-          },
         ]
       },
       {
-        path: "repair-list",
-        element: <RepairTable />,
+        path: "add-bridge",
+        element: <AddBridge type="add" />,
       },
       {
-        path: "repair-add",
-        element: <AddRepairRequest />,
-      },
-      {
-        path: "repair-check/:id",
-        element: <CheckRequest />,
-      },
-      {
-        path: "maintance-list",
-        element: <MaintenanceList />,
-      },
-      {
-        path: "maintance-add",
-        element: <AddMaintenance />,
-      },
-      {
-        path: "maintance-check/:id",
-        element: <CheckMaintenance />,
+        path: "edit-bridge",
+        element: <AddBridge type="edit" />,
       },
     ]
   },

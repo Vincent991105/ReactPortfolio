@@ -1,10 +1,10 @@
 import { IoSettings } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
-import { CustomTooltip } from "../../components/FloatingMenu";
+import  CustomTooltip  from "./CustomTooltip";
 import { useNavigate } from "react-router-dom";
-import dayjs from 'dayjs';
 import MuiTooltip from "@mui/material/Tooltip";
 import { useDispatch } from "react-redux";
+import { selectSensor } from "../../store/BridgeSlice";
 
 function Sensor({ sensorData }) {
   const dispatch = useDispatch();
@@ -87,7 +87,7 @@ function Sensor({ sensorData }) {
             </MuiTooltip>
           )}
         </div>
-        <button onClick={() => checkSensor(sensorData.id, sensorData.bid)}>
+        <button onClick={() => checkSensor(sensorData.id)}>
           細節
         </button>
       </div>

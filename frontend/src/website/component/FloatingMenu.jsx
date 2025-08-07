@@ -1,44 +1,49 @@
-import { useState, useRef, useEffect, useContext } from "react";
-import { IoMenu, IoLogOut } from "react-icons/io5";
+import { useState, useRef, useEffect } from "react";
+import { IoMenu } from "react-icons/io5";
 import { MdOutlineAdminPanelSettings, MdSimCardDownload, MdAppSettingsAlt, MdBrightness1, MdBrightness2 } from "react-icons/md";
 import { useSpring, animated } from "@react-spring/web";
 import { useGesture } from "@use-gesture/react";
 import { FaClipboardList } from "react-icons/fa";
-import { styled } from "@mui/material";
-import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { AiFillAlert, AiFillHome  } from "react-icons/ai";
-import { BasicContext } from "../context/BasicContext";
 import { useNavigate } from "react-router-dom";
 import { GrHostMaintenance } from "react-icons/gr";
 import { FaTools } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { changeColorMode } from "../store/BridgeSlice";
+import './css/FloatingMenu.css'
+import  CustomTooltip  from "./common/CustomTooltip";
 
 //Custom tooltip
-export const CustomTooltip = styled(({ className, ...props }) => (
-  <Tooltip
-    {...props}
-    classes={{ popper: className }}
-    /*  PopperProps={{
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: [0, 7],
-          },
-        },
-      ],
-    }}*/
-  />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: "#36454F",
-    fontSize: "18px",
-  },
-}));
+// export const CustomTooltip = styled(({ className, ...props }) => (
+//   <Tooltip
+//     {...props}
+//     classes={{ popper: className }}
+//     /*  PopperProps={{
+//       modifiers: [
+//         {
+//           name: "offset",
+//           options: {
+//             offset: [0, 7],
+//           },
+//         },
+//       ],
+//     }}*/
+//   />
+// ))(({ theme }) => ({
+//   [`& .${tooltipClasses.tooltip}`]: {
+//     backgroundColor: "#36454F",
+//     fontSize: "18px",
+//   },
+// }));
 
 function FloatingMenu() {
+
   const authInfo = [
+      {
+        title: "建物列表",
+        path: "/ProjectBridge/home",
+        element: "AiFillHome"
+      },
       {
         title: "監控儀錶板",
         path: "/ProjectBridge/bridge-monitoring/data-result",
@@ -49,40 +54,37 @@ function FloatingMenu() {
         path: "/ProjectBridge/sensor-monitoring/data-result",
         element: "FaClipboardList"
       },
-      {
-        title: "異常監控平台",
-        path: "/ProjectBridge/alert-platform",
-        element: "AiFillAlert"
-      },
-      {
-        title: "帳戶管理",
-        path: "http://${window.location.hostname}:8000/admin/",
-        element: "CustomTooltip"
-      },
-      {
-        title: "報告生成與下載",
-        path: "/ProjectBridge/download-report",
-        element: "MdSimCardDownload"
-      },
-      {
-        title: "建物列表",
-        path: "/ProjectBridge/home",
-        element: "AiFillHome"
-      },
-      {
-        title: "橋檢紀錄查詢",
-        path: "/ProjectBridge/maintance-list",
-        element: "GrHostMaintenance"
-      },
-      {
-        title: "維修紀錄查詢",
-        path: "/ProjectBridge/repair-list",
-        element: "FaTools"
-      }
-    ]
+      // {
+      //   title: "異常監控平台",
+      //   path: "/ProjectBridge/alert-platform",
+      //   element: "AiFillAlert"
+      // },
+      // {
+      //   title: "帳戶管理",
+      //   path: "http://${window.location.hostname}:8000/admin/",
+      //   element: "CustomTooltip"
+      // },
+      // {
+      //   title: "報告生成與下載",
+      //   path: "/ProjectBridge/download-report",
+      //   element: "MdSimCardDownload"
+      // },
+      // {
+      //   title: "橋檢紀錄查詢",
+      //   path: "/ProjectBridge/maintance-list",
+      //   element: "GrHostMaintenance"
+      // },
+      // {
+      //   title: "維修紀錄查詢",
+      //   path: "/ProjectBridge/repair-list",
+      //   element: "FaTools"
+      // }
+  ]
 
   const dispatch = useDispatch();
   const { colormode } = useSelector((state) => state.ProjectBridgeData);
+
+  const BrightnessIcon = colormode ? MdBrightness2 : MdBrightness1;
 
   const navigate = useNavigate();
 
@@ -116,44 +118,9 @@ function FloatingMenu() {
           </span>
         </CustomTooltip>
       );
-    }),
-
-    // authInfo.data.group === "Admin" && (
-    //   <CustomTooltip title="帳戶管理" placement="right">
-    //     <span>
-    //       <MdOutlineAdminPanelSettings
-    //         onClick={() =>
-    //           window.open(
-    //             `http://${window.location.hostname}:8000/admin/`,
-    //             "adminWindow"
-    //           )
-    //         }
-    //         style={{ cursor: "pointer" }}
-    //       />
-    //     </span>
-    //   </CustomTooltip>
-    // ),
-    <CustomTooltip title="切換模式" placement="right">
-      <span>
-        {colormode ? (
-          <MdBrightness1
-            onClick={() => (dispatch(changeColorMode()))}
-            style={{ cursor: "pointer" }}
-          />
-        ) : (
-          <MdBrightness2
-            onClick={() => (dispatch(changeColorMode()))}
-            style={{ cursor: "pointer" }}
-          />
-        )}
-      </span>
-    </CustomTooltip>,
-    // <CustomTooltip title="登出" placement="right">
-    //   <span>
-    //     <IoLogOut onClick={() => logout()} style={{ cursor: "pointer" }} />
-    //   </span>
-    // </CustomTooltip>,
+    })
   ]);
+  
   const [isOpen, setIsOpen] = useState(false); // 初始状态设为关闭
 
   // 獲取螢幕的寬度和高度
@@ -230,9 +197,18 @@ function FloatingMenu() {
           {icon.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
+          <div>
+            <CustomTooltip title="切換模式" placement="right">
+              <span>
+                <BrightnessIcon
+                  onClick={() => dispatch(changeColorMode())}
+                  style={{ cursor: "pointer" }}
+                />
+              </span>
+            </CustomTooltip>
+          </div>
         </animated.div>
       )}
-
       {/* 主按鈕 */}
       <div className="mainButton">
         <IoMenu />

@@ -9,7 +9,7 @@ import UnknownData from "./common/UnknownData";
 function HistoryResult({type}) {
 
     const dispatch = useDispatch();
-    const{data, historyData} = useSelector((state) => state.ProjectBridgeData);
+    const{data, historyData, sensorData} = useSelector((state) => state.ProjectBridgeData);
 
     const [resultDate, setResultDate] = useState({
         start: dayjs().subtract(30, "day").format("YYYY-MM-DD"),
@@ -33,7 +33,7 @@ function HistoryResult({type}) {
 
     useEffect(() => {
         dispatch(getHistoryData(resultDate))
-    },[data,resultDate])
+    },[data,resultDate,sensorData])
 
     const [lineActive, setlineActive] = useState({
         q1: true,

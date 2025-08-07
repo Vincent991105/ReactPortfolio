@@ -24,14 +24,6 @@
       flex-direction: column;
       justify-content: center;
     }
-    button {
-      font-size: 1.3em;
-      font-weight: bold;
-      color: var(--color-Button-font);
-      width: auto;
-      padding: 5px 20px;
-      height: 100%;
-    }
   }
   .result {
     display: flex;
@@ -49,6 +41,21 @@
       font-size: 1.2em;
     }
   }
+}
+
+.earthBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  gap: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.1;
+  border-radius: 5px;
+  background: var(--color-Button-bg);
+  height: 30px;
 }
 
 .DisasterRank {

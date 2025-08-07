@@ -153,6 +153,8 @@ function Banner() {
         <h1 className="main-title">Vincent</h1>
         <h2 className="dynamic-keyword">{keywords[textIndex]}</h2>
         <p className="subtitle">Coding is my language. Design is my voice.</p>
+        <p className="subtitle">Email:Qwer012268331290@gmail.com</p>
+        <p className="subtitle">Phone:+886-0905-392-961</p>
         <div className="scroll-down-indicator">↓</div>
       </div>
     </section>

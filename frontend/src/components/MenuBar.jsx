@@ -12,8 +12,8 @@ function MenuBar() {
         <div className="MenuBar">
             <img src="/Logo.png" alt="Logo" />
             <Home className={location.pathname === '/home' ? 'active' : ''} onClick={() => navigate('/home')}/>
-            <Document className={location.pathname === '/projects' ? 'active' : ''} onClick={() => navigate('/projects')}/>
-            <Component className={location.pathname === '/components' ? 'active' : ''} onClick={() => navigate('/components')}/>
+            {/* <Document className={location.pathname === '/projects' ? 'active' : ''} onClick={() => navigate('/projects')}/>
+            <Component className={location.pathname === '/components' ? 'active' : ''} onClick={() => navigate('/components')}/> */}
         </div>
     )
 }

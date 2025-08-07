@@ -55,22 +55,21 @@ function DisasterComponents({
             </p>
           )}
           {type === "earthquake" && isData.latitude && isData.longitude && (
-            <div onClick={() => onToggle(isData)}>
-              <animated.div
-                className="earthBTN"
-                style={{
-                  color: "white",
-                  opacity: x.to({ range: [0, 1], output: [0.3, 1] }),
-                  scale: x.to({
-                    range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                    output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
-                  }),
-                }}
-              >
-                <GiEarthCrack style={{ lineHeight: 1.1 }} />
-                震央
-              </animated.div>
-            </div>
+            <animated.div
+              className="earthBTN"
+              style={{
+                color: "white",
+                opacity: x.to({ range: [0, 1], output: [0.3, 1] }),
+                scale: x.to({
+                  range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                  output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                }),
+              }}
+              onClick={() => onToggle(isData)}
+            >
+              <GiEarthCrack style={{ lineHeight: 1.1 }} />
+              震央
+            </animated.div>
           )}
           {type === "typhoon" && (
             <p>

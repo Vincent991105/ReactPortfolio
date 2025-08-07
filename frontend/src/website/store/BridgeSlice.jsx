@@ -10,12 +10,14 @@ const ProjectBridgeDataSlice = createSlice({
         longitude: 121.284,
         latitude: 25.0564,
         id: 1,
-        name: "南崁橋",
+        type:"橋梁",
+        name: "彩虹橋",
         city: "桃園市",
         district: "蘆竹區",
         photoName: "bridgeDemo.png",
         latestHealth: 91,
         weather: {
+          stationName:"桃園站台",
           latestWeatherTime: "2025-04-10 00:00:00",
           latestPrecipitation: 0.5,
           latestTemperature: 21,
@@ -47,7 +49,7 @@ const ProjectBridgeDataSlice = createSlice({
             elasticity: 2.4,
             inertia: 1.1,
             mass: 30.5,
-            status: 2,
+            status: 0,
             id: 1,
             latestTime: "2025-03-11 10:53:00",
             latestHealth: 89.82,
@@ -72,7 +74,7 @@ const ProjectBridgeDataSlice = createSlice({
             elasticity: null,
             inertia: null,
             mass: null,
-            status: 2,
+            status: 0,
             id: 2,
             latestTime: "2025-03-11 10:52:00",
             latestHealth: 93.48,
@@ -97,12 +99,14 @@ const ProjectBridgeDataSlice = createSlice({
         longitude: 121.249,
         latitude: 25.1177,
         id: 2,
+        type:"橋梁",
         name: "南崁橋",
         city: "桃園市",
         district: "蘆竹區",
         photoName: "bridgeDemo.png",
         latestHealth: null,
-        weather: {},
+        stationName:"桃園站台",
+        weather: null,
         earthquake: null,
         typhoon: null,
         sensorList: []
@@ -112,7 +116,8 @@ const ProjectBridgeDataSlice = createSlice({
       longitude: 121.284,
       latitude: 25.0564,
       id: 1,
-      name: "南崁橋",
+      type:"橋梁",
+      name: "彩虹橋",
       city: "桃園市",
       district: "蘆竹區",
       photoName: "bridgeDemo.png",
@@ -149,7 +154,7 @@ const ProjectBridgeDataSlice = createSlice({
           elasticity: 2.4,
           inertia: 1.1,
           mass: 30.5,
-          status: 2,
+          status: 0,
           id: 1,
           latestTime: "2025-03-11 10:53:00",
           latestHealth: 89.82,
@@ -174,7 +179,7 @@ const ProjectBridgeDataSlice = createSlice({
           elasticity: null,
           inertia: null,
           mass: null,
-          status: 2,
+          status: 0,
           id: 2,
           latestTime: "2025-03-11 10:52:00",
           latestHealth: 93.48,
@@ -201,7 +206,7 @@ const ProjectBridgeDataSlice = createSlice({
       elasticity: 2.4,
       inertia: 1.1,
       mass: 30.5,
-      status: 2,
+      status: 0,
       id: 1,
       latestTime: "2025-03-11 10:53:00",
       latestHealth: 89.82,
@@ -251,11 +256,61 @@ const ProjectBridgeDataSlice = createSlice({
         state.historyData = null;
       }
     },
-    selectSensor:(state,action) => {
-      const selected = state.data.sensorlist.find(item => item.id === action.payload);
-      if (selected) {
-        state.sensorData = selected || {};
+    selectSensor: (state, action) => {
+      const selected = state.data.sensorList.find(
+        item => item.id === action.payload
+      );
+      state.sensorData = selected || {};
+      state.realTimeData = generateMockData();
+    },
+    addBridge: (state, action) => {
+      const maxId = state.list.length > 0 
+        ? Math.max(...state.list.map(item => item.id || 0)) 
+        : 0
+
+      const Data = {
+        longitude: action.payload.longitude,
+        latitude: action.payload.latitude,
+        id: maxId + 1,
+        type:"橋梁",
+        name: action.payload.name,
+        city: action.payload.city,
+        district: action.payload.district,
+        photoName: null,
+        base64:action.payload.base64,
+        latestHealth: null,
+        stationName:null,
+        weather: null,
+        earthquake: null,
+        typhoon: null,
+        sensorList: []
       }
+
+      state.list.push(Data);
+      state.data = Data;
+      state.realTimeData = null;
+    },
+    updateBridge: (state, action) => {
+      state.list = state.list.map(item => {
+        if (item.id === action.payload.id) {
+          return {
+            ...item,
+            name: action.payload.name ?? item.name,
+            base64: action.payload.base64 ?? item.base64,
+          };
+        }
+        return item;
+      });
+
+      const fieldsToUpdate = ['name', 'base64'];
+
+      state.data = {
+        ...state.data,
+        ...fieldsToUpdate.reduce((acc, key) => {
+          if (action.payload[key] !== undefined) acc[key] = action.payload[key];
+          return acc;
+        }, {}),
+      };
     }
   },
   extraReducers: (builder) => {
@@ -263,5 +318,5 @@ const ProjectBridgeDataSlice = createSlice({
   },
 });
 
-export const { handleToggle, changeColorMode, SelectBridge, getHistoryData, selectSensor } = ProjectBridgeDataSlice.actions;
+export const { handleToggle, changeColorMode, SelectBridge, getHistoryData, selectSensor, addBridge, updateBridge } = ProjectBridgeDataSlice.actions;
 export default ProjectBridgeDataSlice.reducer;

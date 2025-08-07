@@ -1,0 +1,65 @@
+.PinkTheme {
+  --color-primary: #e95098;
+  --color-secondary: #F9CCE0;
+  --color-white: #FFFFFF;
+  --color-Select-bg:#000000;
+  --color-Header: #e95098;
+  --color-font: #000000;
+  --color-font-black: #000000;
+  --color-font-grey: #838383;
+  --color-font-white: #FFFFFF;
+  --color-alert-font: rgb(255, 59, 59);
+  --color-alert-bg: #ff00002b;
+  --color-icon-button: #929292;
+  --color-icon-hover:#636363;
+  --color-component-bg: #FFFFFF;
+  --color-overlay: rgba(0, 0, 0, 0.5); /* 遮罩背景 */
+  --color-wrapper-bg: #FFFFFF;
+  --color-Button-font: #FFFFFF;
+  --color-Button-bg: #e95098;
+  --color-Button-hover: #ff95c7;
+  --color-tab-font:#ff95c7;
+  --color-tab-bg:#FFFFFF;
+  --color-input:#FFFFFF;
+  --color-input-br:rgb(118, 118, 118);
+  --color-input-placeholder:#aaaaaa;
+  --color-form-bg:#e7e7e7;
+  --color-chart-bg:#414141;
+  --color-disabled:#d9d9d9;
+  --color-disabled-font:#414141;
+  --color-Template-bg: #eafaff;
+  --color-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
+}
+
+.DarkTheme {
+  --color-primary: #8b8b8b;
+  --color-secondary: #333333;
+  --color-white: #FFFFFF;
+  --color-Select-bg:#000000;
+  --color-Header: #bebebe;
+  --color-font: #a4a4a4;
+  --color-font-black: #000000;
+  --color-font-grey: #838383;
+  --color-font-white: #FFFFFF;
+  --color-alert-font: rgb(255, 59, 59);
+  --color-alert-bg: #ff00002b;
+  --color-icon-button: #929292;
+  --color-icon-hover:#636363;
+  --color-component-bg: #3e3e3e;
+  --color-overlay: rgba(0, 0, 0, 0.5); /* 遮罩背景 */
+  --color-wrapper-bg: #3e3e3e;
+  --color-Button-font: #FFFFFF;
+  --color-Button-bg: #7b7b7b;
+  --color-Button-hover: #bbbbbb;
+  --color-tab-font:#c3c3c3;
+  --color-tab-bg:#FFFFFF;
+  --color-input:#000000;
+  --color-input-br:rgb(118, 118, 118);
+  --color-input-placeholder:#aaaaaa;
+  --color-form-bg:#454545;
+  --color-chart-bg:#414141;
+  --color-disabled:#3e3e3e;
+  --color-disabled-font:#bbbbbb;
+  --color-Template-bg: #131f22;
+  --color-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
+}

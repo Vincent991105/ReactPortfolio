@@ -1,9 +1,11 @@
 import '../css/ProjectItem.css'
+import ImageItem from './ImageItem'
 
 function ProjectItem({data , reverse}){
     return(
-        <div className={`ProjectItem ${reverse ? 'reverse' : ''}`}>
-            <img src="/login.jpg" alt="demo" />
+        <div onClick={() => window.open(data.url, '_blank')} className={`ProjectItem ${reverse ? 'reverse' : ''}`}>
+            <ImageItem data={data.img} remark={data.name}/>
+            {/* <img src="/login.jpg" alt="demo" /> */}
             <div className="Context">
                 <h3>{data.year} - {data.name}</h3>
                 <h4>{data.job}</h4>

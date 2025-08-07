@@ -1,10 +1,8 @@
 import { MapContainer, TileLayer, Marker, Circle, useMapEvents } from "react-leaflet";
-import { BridgeContext } from "../context/BridgeContext";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
-import { RecordContext } from "../context/RecordContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { FaHandPointDown } from "react-icons/fa";
@@ -27,13 +25,10 @@ function BridgeMap() {
 
   const selectBridge = (data) => {
     dispatch(SelectBridge(data))
-    if(location.pathname.includes("maintenance")){
-      navigate('/ProjectBridge/bridge-monitoring/data-result')
+    if(location.pathname.includes("home")){
+      navigate('/ProjectBridge/bridge-monitoring/sensor-list')
     }
   }
-
-  const { alertPoint, setSearchTerm } = useContext(BridgeContext);
-  const { searchBridge, keyWord } = useContext(RecordContext);
 
   const createCustomIcon = (id, type, name) => {
 
@@ -41,9 +36,9 @@ function BridgeMap() {
 
     // 如果路径是 "/MaintenanceRecord"，则设置 fillColor
     if (location.pathname.includes("/maintenance")) {
-      if(keyWord === name){
-        fillColor = "#e95098"
-      }
+      // if(keyWord === name){
+      //   fillColor = "#e95098"
+      // }
     } else if (location.pathname === ("/add-bridge")){
 
     }else {
@@ -219,7 +214,7 @@ function BridgeMap() {
         )}
 
         {/* 動態添加橋梁標記 */}
-        {(location.pathname === "/alert-platform" ? alertPoint : list)
+        {(location.pathname === "/alert-platform" ? '' : list)
           .filter((point) => point.latitude && point.longitude) // 過濾掉沒有座標的數據
           .map((point, index) => (
             <Marker
@@ -229,13 +224,7 @@ function BridgeMap() {
               ]}
               eventHandlers={{
                 click: () => {
-                  if (location.pathname === "/alert-platform") {
-                    setSearchTerm(point.name);
-                  }else if(location.pathname.includes("maintenance")){
-                    searchBridge(point.name);
-                  }else {
                     selectBridge(point.id); // 點擊 bridgePoint 時的行為
-                  }
                 },
               }}
               icon={

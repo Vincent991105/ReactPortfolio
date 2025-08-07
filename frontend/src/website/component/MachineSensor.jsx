@@ -7,18 +7,18 @@ function MachineSensor() {
 
   const { data } = useSelector((state) => state.ProjectBridgeData);
 
-  if(!data){
-    return(<UnknownData />)
+  if(data.sensorList.length === 0){
+    return(<UnknownData text='尚無任何感測器資料'/>)
   }
 
   return(
     <div className="MachineSensor">
-      <button
+      {/* <button
           className="AddSensor"
           // onClick={() => changeEdit("sensor", "add")}
         >
           新增感測器
-      </button>
+      </button> */}
       {data.sensorList.map((item) => {
         return (
           <Sensor
