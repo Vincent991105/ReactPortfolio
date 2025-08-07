@@ -203,25 +203,21 @@ const HomePage = () => {
                             }}
                         >
                             <TableCell
-                            sx={{ border: "1px solid #E95098" }}
                             align="center"
                             >
                             <h4>{structure.id}</h4>
                             </TableCell>
                             <TableCell
-                            sx={{ border: "1px solid #E95098" }}
                             align="center"
                             >
                             <h4>{structure.name}</h4>
                             </TableCell>
                             <TableCell
-                            sx={{ border: "1px solid #E95098" }}
                             align="center"
                             >
                             <h4>{structure.type}</h4>
                             </TableCell>
                             <TableCell
-                            sx={{ border: "1px solid #E95098" }}
                             align="center"
                             >
                             {/*Station  weather information*/}
@@ -252,7 +248,6 @@ const HomePage = () => {
                             }
                             </TableCell>
                             <TableCell
-                            sx={{ border: "1px solid #E95098" }}
                             align="center"
                             >
                             <h4 style={{ color: "rgb(255, 59, 59)" }}>
@@ -260,7 +255,6 @@ const HomePage = () => {
                             </h4>
                             </TableCell>
                             <TableCell
-                            sx={{ border: "1px solid #E95098" }}
                             align="center"
                             >
                             <h4>
@@ -270,7 +264,6 @@ const HomePage = () => {
                             </h4>
                             </TableCell>
                             {/* <TableCell
-                            sx={{ border: "1px solid #E95098" }}
                             align="center"
                             >
                             <h4>
