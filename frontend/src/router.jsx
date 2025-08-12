@@ -11,6 +11,9 @@ import DataResult from "./website/component/DataResult";
 import HistoryResult from "./website/component/HistoryResult";
 import MachineSensor from "./website/component/MachineSensor";
 import BridgeMonitoring from "./website/pages/BridgeMonitoring";
+import ProjectCathay from "./website/ProjectCathay";
+import BankHome from "./website/pages/BankHome";
+import UnknownData from "./website/component/common/UnknownData";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +89,32 @@ const router = createBrowserRouter([
       {
         path: "edit-bridge",
         element: <AddBridge type="edit" />,
+      },
+    ]
+  },
+  {
+    path: "ProjectCathay",
+    element: <ProjectCathay />,
+    children:[
+      {
+        index: true,
+        element: <Navigate replace to={"HomePage"} />,
+      },
+      {
+        path: "HomePage",
+        element: <BankHome />,
+      },
+      {
+        path: "Translate",
+        element: <UnknownData text="尚未擁有此頁面資料" />,
+      },
+      {
+        path: "History",
+        element: <UnknownData text="尚未擁有此頁面資料" />,
+      },
+      {
+        path: "Investment",
+        element: <UnknownData text="尚未擁有此頁面資料" />,
       },
     ]
   },
