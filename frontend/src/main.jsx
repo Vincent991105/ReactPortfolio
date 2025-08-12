@@ -11,9 +11,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <SpeedInsights>
-        <RouterProvider router={router} />
-      </SpeedInsights>
+      <RouterProvider router={router} />
     </Provider>
   </StrictMode>
 );
