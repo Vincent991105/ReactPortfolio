@@ -38,8 +38,9 @@
             .SensorCommonData {
             display: flex;
             padding: 10px;
-            flex-direction: column;
             flex: 1 0 0;
+            justify-content: space-between;
+            align-items: center;
             gap: 3px;
             border-radius: 10px;
             background: var(--color-component-bg);

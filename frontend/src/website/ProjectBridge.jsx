@@ -13,7 +13,6 @@ function ProjectBridge(){
         document.body.className = colormode ? "PinkTheme" : "DarkTheme";
     }, [colormode]);
 
-
     return(
         <div className="ProjectBridge">
             <div className="Logo">

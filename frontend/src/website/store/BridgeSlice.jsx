@@ -244,8 +244,10 @@ const ProjectBridgeDataSlice = createSlice({
         state.data = selected || {};
       }
       if (selected.sensorList.length === 0){
+        state.sensorData = null;
         state.realTimeData = null;
       }else{
+        state.sensorData = selected.sensorList[0];
         state.realTimeData = generateMockData();
       }
     },

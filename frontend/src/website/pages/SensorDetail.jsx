@@ -5,6 +5,7 @@ import { IoMdRefreshCircle } from "react-icons/io";
 import './css/SensorDetail.css'
 import { useSelector } from "react-redux";
 import TabContent from "../component/TabContent";
+import { MdOutlineSensors } from "react-icons/md";
 
 function SensorDetail() {
   // 用於判斷當前路由與每個 tab 的對應關係
@@ -18,9 +19,9 @@ function SensorDetail() {
   const { data, sensorData } = useSelector((state) => state.ProjectBridgeData);
 
   const statusColor =
-    sensorData.status === 0 && sensorData.latestHealth
+    sensorData?.status === 0 && sensorData?.latestHealth
       ? { backgroundColor: "#9DCD7B", color: "#FFF" }
-      : sensorData.status === 1 && sensorData.latestHealth
+      : sensorData?.status === 1 && sensorData?.latestHealth
       ? { backgroundColor: "#FFD700", color: "#FFF" }
       : { backgroundColor: "#FF6347", color: "#FFF" };
 
@@ -49,20 +50,30 @@ function SensorDetail() {
             <p>經度：{data.latitude}</p>
             <p>緯度：{data.longitude}</p>
           </div>
-          <div className="SensorCommonData" style={statusColor}>
-            <h3>感測器資料</h3>
-            <h4>{sensorData.detailedLocation}</h4>
-            <p style={{ fontWeight: "bold" }}>
-              構件樣態：{sensorData.sensorLocation}
-            </p>
-            <p style={{ fontWeight: "bold" }}>
-              {sensorData.status === 0
-                ? "連線正常"
-                : sensorData.status === 1
-                ? "連線延遲(超過10分鐘)"
-                : "連線中斷(超過60分鐘)"}
-            </p>
-          </div>
+          {sensorData ? (
+            <div className="SensorCommonData" style={statusColor}>
+              <MdOutlineSensors color="black" size={30} />
+              <h3>{sensorData.detailedLocation}_{sensorData.sensorLocation}</h3>
+              
+              {/* 優化 status 處理邏輯 */}
+              <h4>
+                {(() => {
+                  switch (sensorData.status) {
+                    case 0:
+                      return "連線正常";
+                    case 1:
+                      return "連線延遲(超過10分鐘)";
+                    default:
+                      return "連線中斷(超過60分鐘)";
+                  }
+                })()}
+              </h4>
+            </div>
+          ) : (
+            <div className="SensorCommonData">
+              <h3>目前尚無資料</h3>
+            </div>
+          )}
         </div>
       </div>
       <TabContent tabs={tabs}/>
